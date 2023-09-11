@@ -1,0 +1,38 @@
+.weather-app {
+  border: 1px solid;
+  margin-top: 60px;
+  padding: 20px;
+  display: center;
+}
+.weather-search-form {
+  margin-bottom: 40px;
+}
+.col-4 {
+  margin-bottom: 40px;
+}
+h1,
+h2,
+h5 {
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+}
+li {
+  list-style: none;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  text-align: center;
+}
+.col-2 {
+  text-align: center;
+  margin-left: 30px;
+}
+
+.button {
+  display: block;
+  margin: auto;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: black;
+  background-color: pink;
+}
