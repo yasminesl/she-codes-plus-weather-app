@@ -25,14 +25,14 @@ function formatDate(timestamp) {
 // Finds Weather Information from search input
 function search(event) {
   event.preventDefault();
-  let apiKey = "bd5b4461863eddaa6ced0a0a67989e0a";
+  let apiKey = "634e6o1ffb8b62f49ac8ta3960376144";
   let units = "metric";
-  let endPoint = "https://api.openweathermap.org/data/2.5/weather?";
+  let endPoint = "https://api.shecodes.io/weather/v1/current?";
   let searchInput = document.querySelector("#search-text-input");
   let city = document.querySelector("h1");
   city.innerHTML = searchInput.value;
 
-  let apiUrl = `${endPoint}q=${searchInput.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `${endPoint}query=${searchInput.value}&key=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemperature);
 }
