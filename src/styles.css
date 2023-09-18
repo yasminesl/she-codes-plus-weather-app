@@ -35,7 +35,6 @@ li:first-letter {
 .weather-app {
   border: 1px solid;
   margin-top: 60px;
-
   padding: 20px;
   display: center;
 }
@@ -47,9 +46,7 @@ li:first-letter {
 .overview {
   margin-top: 20px;
 }
-.weather-search-form {
-  margin-bottom: 40px;
-}
+
 .col-4 {
   margin-bottom: 40px;
 }
