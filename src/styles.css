@@ -10,6 +10,7 @@ ul {
 }
 h2 {
   margin: 0;
+  font-size: 30px;
 }
 li {
   list-style: none;
@@ -18,13 +19,24 @@ li {
   font-size: 16px;
   text-align: center;
 }
+.weather-app-wrapper {
+  margin: 30px auto;
+  max-width: 1000px;
+}
 .weather-app {
   border: 1px solid;
   margin-top: 60px;
-  margin: 30px auto;
-  max-width: 1000px;
+
   padding: 20px;
   display: center;
+}
+.current-temp .units {
+  position: relative;
+  font-size: 16px;
+  top: -8px;
+}
+.overview {
+  margin-top: 20px;
 }
 .weather-search-form {
   margin-bottom: 40px;
