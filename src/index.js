@@ -25,24 +25,25 @@ function formatDate(timestamp) {
 // Finds Weather Information from search input
 function search(event) {
   event.preventDefault();
-  let apiKey = "634e6o1ffb8b62f49ac8ta3960376144";
-  let units = "metric";
-  let endPoint = "https://api.shecodes.io/weather/v1/current?";
   let searchInput = document.querySelector("#search-text-input");
   let city = document.querySelector("h1");
   city.innerHTML = searchInput.value;
-
-  let apiUrl = `${endPoint}query=${searchInput.value}&key=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(showTemperature);
+  searchCity(searchInput.value);
 }
 
+function searchCity(city) {
+  let apiKey = "634e6o1ffb8b62f49ac8ta3960376144";
+  let units = "metric";
+  let endPoint = "https://api.shecodes.io/weather/v1/current?";
+  let apiUrl = `${endPoint}query=${city}&key=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  let celsiusTemperature = Math.round(response.data.temperature.current);
   let current = document.querySelector(".current-temp");
-  current.innerHTML = `${temperature} °C`;
+  current.innerHTML = `${celsiusTemperature} °C`;
 
-  let tempDescription = response.data.weather[0].description;
+  let tempDescription = response.data.condition.description;
   let description = document.querySelector("#temperature-description");
   description.innerHTML = `${tempDescription}`;
 
@@ -50,18 +51,18 @@ function showTemperature(response) {
   let windSpeed = document.querySelector("#temperature-wind");
   windSpeed.innerHTML = `Wind: ${wind}km/h`;
 
-  let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.name;
+  let cityElement = document.querySelector("h1");
+  cityElement.innerHTML = response.data.city;
 
   let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 function showPosition(position) {
@@ -72,5 +73,32 @@ function showPosition(position) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".current-temp");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector(".current-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#weather-search-form");
 form.addEventListener("submit", search);
+
+let fahrenheitLink = document.querySelector("fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("fahrenheit-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+searchCity("Charlotte");
