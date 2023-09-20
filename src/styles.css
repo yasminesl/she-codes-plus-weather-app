@@ -28,20 +28,56 @@ li:first-letter {
   text-transform: capitalize;
 }
 
-.weather-app-wrapper {
+.container {
   margin: 30px auto;
   max-width: 1000px;
 }
 .weather-app {
-  border: 1px solid;
+  border: 1px;
+  border-radius: 20px;
   margin-top: 60px;
   padding: 20px;
   display: center;
+  background: linear-gradient(
+    rgba(65, 100, 164) 0%,
+    rgba(141, 129, 165) 61%,
+    rgba(206, 172, 167) 85%
+  );
+  height: 500px;
+}
+.btn {
+  background-color: rgba(87, 108, 164);
+  border-color: rgba(67, 101, 164);
+  width: 100px;
+  margin-left: 5px;
+}
+.btn:hover {
+  background: rgba(125, 123, 165);
+  border-color: rgba(87, 108, 164);
+}
+.col-4 {
+  margin-top: 65px;
+}
+.card {
+  background: linear-gradient(
+    rgba(140, 128, 165) 0%,
+    rgba(175, 151, 166) 61%,
+    rgba(206, 172, 167) 85%
+  );
+  border: none;
+  margin-top: 40px;
 }
 .current-temp .units {
   position: relative;
   font-size: 16px;
   top: -8px;
+}
+.current-temp {
+  color: black;
+  cursor: default;
+}
+.current-temp .active {
+  text-decoration: none;
 }
 .overview {
   margin-top: 20px;
