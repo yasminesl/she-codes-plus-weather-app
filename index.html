@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
+
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
@@ -37,9 +38,9 @@
                     class="form-control"
                     id="search-text-input"
                   />
-                  <div class="col-3">
-                  <input type="submit" value="search" class="btn btn-primary"/>
-                  </div>
+                </div>
+                <div class="col-3">
+                  <input type="submit" value="search" class="btn btn-primary" />
                 </div>
               </div>
             </form>
@@ -48,25 +49,25 @@
             <div class="col-4">
               <div class="overview">
                 <h2 class="current-temp">
-                  29<span class="units">°C | <a href="#">°F </a></span>
+                  29
+                  <span class="units">
+                    <a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F </a></span
+                  >
                 </h2>
                 <ul>
                   <li id="temperature-description">Sunny</li>
                   <li id="temperature-wind">11 km/h</li>
-
-
                 </ul>
               </div>
             </div>
             <div class="col-4">
               <h1>Charlotte</h1>
               <h3>Last updated: <span id="date"></span></h3>
-              
             </div>
             <div class="col-4 today-emoji">
               <div class="d-flex weather-temperature">
                 <img src="" alt="Clear" width="80px" id="icon" />
-              </div>
               </div>
             </div>
           </div>
@@ -118,15 +119,15 @@
             </div>
           </div>
         </div>
-        <small>
-          <a
-            href="https://github.com/yasminesl/she-codes-plus-weather-app"
-            target="_blank"
-            >Open-source code
-          </a>
-          by Yasmine Slavenburg
-        </small>
       </div>
+      <small>
+        <a
+          href="https://github.com/yasminesl/she-codes-plus-weather-app"
+          target="_blank"
+          >Open-source code
+        </a>
+        by Yasmine Slavenburg
+      </small>
     </div>
     <script src="src/index.js"></script>
   </body>
