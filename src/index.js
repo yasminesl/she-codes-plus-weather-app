@@ -92,6 +92,8 @@ function showCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
+searchCity("Charlotte");
+
 let form = document.querySelector("#weather-search-form");
 form.addEventListener("submit", search);
 
@@ -100,5 +102,3 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("fahrenheit-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
-
-searchCity("Charlotte");
