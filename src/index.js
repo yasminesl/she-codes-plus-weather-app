@@ -39,9 +39,9 @@ function searchCity(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 function showTemperature(response) {
-  let celsiusTemperature = Math.round(response.data.temperature.current);
+  celsiusTemperature = Math.round(response.data.temperature.current);
   let current = document.querySelector(".current-temp");
-  current.innerHTML = `${celsiusTemperature} °C`;
+  current.innerHTML = `${celsiusTemperature}`;
 
   let tempDescription = response.data.condition.description;
   let description = document.querySelector("#temperature-description");
@@ -63,6 +63,7 @@ function showTemperature(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
+  showCelsiusTemperature({ preventDefault: function () {} });
 }
 
 function showPosition(position) {
@@ -72,6 +73,12 @@ function showPosition(position) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 function showFahrenheitTemperature(event) {
   event.preventDefault();
@@ -96,9 +103,3 @@ searchCity("Charlotte");
 
 let form = document.querySelector("#weather-search-form");
 form.addEventListener("submit", search);
-
-let fahrenheitLink = document.querySelector("fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("fahrenheit-link");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
