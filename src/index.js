@@ -22,6 +22,29 @@ function formatDate(timestamp) {
   }
   return `${day} ${hours}:${minutes}`;
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <img src="images/sun.png" alt="" width="30px" />
+                <div class="weather-forecast-temperature">
+                  <span class="weather-forecast-temperature-max">31°</span>
+                  <span class="weather-forecast-temperature-min">24°</span>
+                </div>
+              </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
 // Finds Weather Information from search input
 function search(event) {
   event.preventDefault();
@@ -98,6 +121,7 @@ function showCelsiusTemperature(event) {
 }
 
 let celsiusTemperature = null;
+displayForecast();
 
 searchCity("Charlotte");
 
