@@ -1,6 +1,5 @@
 h1,
-h2,
-h5 {
+h2 {
   font-family: "DM Sans", sans-serif;
   text-align: center;
 }
@@ -86,11 +85,24 @@ li:first-letter {
 .col-4 {
   margin-bottom: 40px;
 }
-.col-2 {
-  text-align: center;
-  margin-left: 30px;
-}
 .active {
   text-decoration: none;
   color: black;
+}
+
+.weather-forecast {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+}
+.weather-forecast-temperature {
+  font-size: 14px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.6;
 }
