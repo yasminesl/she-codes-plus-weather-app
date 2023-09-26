@@ -38,24 +38,25 @@ li:first-letter {
   padding: 20px;
   display: center;
   background: linear-gradient(
-    rgba(65, 100, 164) 0%,
-    rgba(141, 129, 165) 61%,
-    rgba(206, 172, 167) 85%
+    rgba(40, 43, 94) 0%,
+    rgba(123, 90, 137) 61%,
+    rgba(176, 131, 161) 85%
   );
   height: 500px;
 }
 .btn {
-  background-color: rgba(87, 108, 164);
-  border-color: rgba(67, 101, 164);
+  background-color: rgba(40, 43, 94);
+  border-color: rgba(40, 43, 94);
   width: 100px;
   margin-left: 5px;
 }
 .btn:hover {
-  background: rgba(125, 123, 165);
-  border-color: rgba(87, 108, 164);
+  background: rgba(69, 59, 109);
+  border-color: rgba(69, 59, 109);
 }
 .col-4 {
   margin-top: 65px;
+  color: white;
 }
 
 .current-temp .units {
@@ -64,7 +65,7 @@ li:first-letter {
   top: -8px;
 }
 .units {
-  color: black;
+  color: white;
   cursor: default;
 }
 
@@ -72,7 +73,7 @@ li:first-letter {
   margin-top: 20px;
 }
 .units .active {
-  color: rgb(33, 33, 33);
+  color: white;
   cursor: default;
 }
 a {
