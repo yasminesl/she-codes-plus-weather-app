@@ -57,29 +57,26 @@ li:first-letter {
 .col-4 {
   margin-top: 65px;
 }
-.card {
-  background: linear-gradient(
-    rgba(140, 128, 165) 0%,
-    rgba(175, 151, 166) 61%,
-    rgba(206, 172, 167) 85%
-  );
-  border: none;
-  margin-top: 40px;
-}
+
 .current-temp .units {
   position: relative;
   font-size: 16px;
   top: -8px;
 }
-.current-temp {
+.units {
   color: black;
   cursor: default;
 }
-.current-temp .active {
-  text-decoration: none;
-}
+
 .overview {
   margin-top: 20px;
+}
+.units .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+a {
+  text-decoration: none;
 }
 
 .col-4 {
@@ -96,12 +93,12 @@ li:first-letter {
 }
 
 .weather-forecast-date {
-  font-size: 16px;
+  font-size: 18px;
   color: black;
   font-weight: 600;
 }
 .weather-forecast-temperature {
-  font-size: 14px;
+  font-size: 16px;
 }
 .weather-forecast-temperature-min {
   opacity: 0.6;
